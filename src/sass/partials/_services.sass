@@ -1,0 +1,82 @@
+.service-item
+  $this: &
+  display: block
+  text-align: center
+  position: relative
+  border: 1px solid transparent
+  padding-top: 30px
+  padding-bottom: 100px
+  padding-left: 10px
+  padding-right: 10px
+  overflow: hidden
+  box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.12)
+  height: calc(100% - 30px)
+  margin-bottom: 30px
+  +tr(border-color .3s, transform .3s)
+  +hover
+    border-color: $accent
+    +scale(1.02)
+    #{$this}__btns
+      opacity: 1
+      visibility: visible
+    #{$this}__price
+      visibility: hidden
+      opacity: 0
+  &__title
+    margin-bottom: 10px
+  &__btn
+    margin-bottom: 20px
+    +md
+      margin-bottom: 15px
+  &__link
+    color: $black
+  &__img
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: 50% 50%
+    position: relative
+    padding-top: 80%
+    img
+      +vcenter
+  &__price
+    position: absolute
+    bottom: -125px
+    left: 50%
+    transform: translate(-50%, 0)
+    background-color: $white-dark
+    border-radius: 50%
+    width: 235px
+    height: 235px
+    text-align: center
+    z-index: 0
+    padding-top: 10%
+    +tr(opacity .3s, visibility .3s)
+    .price
+      display: inline-block
+  &__btns
+    visibility: hidden
+    opacity: 0
+    position: absolute
+    left: 50%
+    bottom: 20px
+    transform: translate(-50%, 0)
+    z-index: 1
+    +tr(opacity .3s, visibility .3s)
+
+  &--link
+    +flex(center, center)
+    box-shadow: none
+    +hover
+      border-color: transparent
+
+.service-link
+  +flex(center, center)
+  border-radius: 50%
+  background-color: $accent
+  width: 265px
+  height: 265px
+  color: $white
+  +hover
+    .link-arrow
+      &__arr
+        width: 30px

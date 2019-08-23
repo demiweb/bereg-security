@@ -1,0 +1,78 @@
+{%set
+features = {
+  list: [
+    {
+      icon: 'siren',
+      title: '27 групп реагирования',
+      text: 'В г. Киев на объектах и квартирах наших <br>
+клиентов реагирует 27 мобильных групп <br> 
+быстрого реагирования'
+    },
+    {
+      icon: 'chip',
+      title: 'Идем в ногу со временем',
+      text: 'Пункт центрального наблюдения <br>
+ оснащен всеми техническими <br>
+новинками и оборудованием'
+    },
+    {
+      icon: 'call-center',
+      title: 'Отвечаем за безопасность',
+      text: 'Наши сотрудники понимают всю важность <br> 
+быстрого реагирования на вызовы <br>
+и работают без заминок'
+    },
+    {
+      bg: true
+    },
+    {
+      icon: 'cctv',
+      title: 'Полный спектр услуг',
+      text: 'Мы предоставляем полный спектр услуг охранной <br>
+и пожарной сигнализации, систем контроля <br> 
+доступа и видеонаблюдения «под ключ»'
+    },
+    {
+      icon: 'crm',
+      title: 'Лояльный подход к каждому',
+      text: 'Коммерческий подход к каждому заказчику <br>
+с возможностью установки сигнализации <br>
+ в рассрочку'
+    }
+  ]
+}
+%}  
+
+<!-- begin section -->
+<section class="section pt-sm pb-md">
+  <div class="container">
+    <!-- begin features -->
+    <div class="features">
+      {% for i in features.list %}
+      <div class="features__item">
+        <!-- begin feature -->
+        <div class="feature{% if i.bg %} js-lazy{% endif %}" {% if i.bg %}data-background-image="./img/features/01.jpg"{% endif %}>
+          {% if i.icon %}
+          <div class="feature__icon">
+            {{ mixins.icon(i.icon) }}
+          </div>
+          {% endif %}
+
+          {% if i.title %}
+          <div class="feature__title">
+            <div class="title title--white title--h4">{{ i.title | safe }}</div>
+          </div>
+          {% endif %}
+
+          {% if i.text %}
+          <div class="feature__text">{{ i.text | safe }}</div>
+          {% endif %}
+        </div>
+        <!-- end feature -->
+      </div>
+      {% endfor %}
+    </div>
+    <!-- end features -->
+  </div>
+</section>
+<!-- end section -->

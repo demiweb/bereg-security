@@ -1,0 +1,40 @@
+.btn
+  $this: &
+  display: inline-flex
+  color: $white
+  font-weight: 500
+  justify-content: flex-start
+  align-items: normal
+  // +tr(color .3s)
+  +hover
+    color: $accent
+    #{$this}__title
+      background-color: $white
+    #{$this}__icon
+      // background-color: $gray-light
+      color: $white
+
+  &__title
+    text-align: center
+    min-width: 210px
+    padding-left: 10px
+    padding-right: 10px
+    background-color: $accent
+    border: 1px solid  $accent
+    padding-top: 13px
+    padding-bottom: 13px
+    display: block
+    +tr(color .3s, background-color .3s)
+  &__icon
+    background-color: $accent-light
+    +flex(center, center)
+    width: 50px
+    border: 1px solid  $accent-light
+    +tr(color .3s, background-color .3s)
+    .icon
+      font-size: 25px
+
+  &--link
+  &--full
+    min-width: 0
+    width: 100%

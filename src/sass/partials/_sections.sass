@@ -1,0 +1,42 @@
+.section
+  position: relative
+  .container
+    position: relative
+    z-index: 1
+  &__title
+    margin-bottom: 15px
+    +sm
+      margin-bottom: 10px
+  &__subttl
+    margin-bottom: 50px
+    +lg
+      margin-bottom: 40px
+    +md
+      margin-bottom: 25px
+    +sm
+      margin-bottom: 15px
+
+  &--gray
+    background-color: $gray
+  &--simple
+    padding-top: 50px
+    padding-bottom: 50px
+    +xl
+      padding-top: 40px
+      padding-bottom: 40px
+    +lg
+      padding-top: 30px
+      padding-bottom: 30px
+
+.section-img
+  position: absolute
+  font-size: 0
+  z-index: 0
+  &.is-bottom
+    bottom: 0
+  &.is-right
+    right: 0
+  &.is-right-100
+    right: 10%
+  &.is-right-50
+    right: 5%

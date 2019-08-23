@@ -1,0 +1,47 @@
+.hero-features
+  +flex()
+
+.hero-feature
+  padding-right: 15px
+  +notlast
+    margin-right: 50px
+  &__icon
+    color: $yellow
+    margin-bottom: 12px
+    +sm
+      margin-bottom: 8px
+    .icon
+      font-size: 52px
+  &__title
+    font-size: $fz-xs
+    font-weight: 400
+
+.features
+  +flex(flex-start, normal, row, wrap)
+  margin-left: -2px
+  margin-right: -2px
+  &__item
+    width: 33.33333%
+    padding-left: 2px
+    padding-right: 2px
+    margin-bottom: 4px
+
+
+.feature
+  +cover
+  background-color: $accent-light
+  text-align: center
+  padding: 50px
+  height: 100%
+  color: $white
+  &__icon
+    color: $yellow
+    margin-bottom: 25px
+    +md
+      margin-bottom: 15px
+    .icon
+      font-size: 52px
+  &__title
+    margin-bottom: 15px
+    +sm
+      margin-bottom: 10px

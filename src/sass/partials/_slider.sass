@@ -1,0 +1,49 @@
+.slider
+  $this: &
+  &__wrap
+    position: relative
+    .tns-nav
+      text-align: center
+      button
+        display: inline-block
+        vertical-align: middle
+        margin-left: 6px
+        margin-right: 6px
+        border-radius: 50%
+        background-color: #ebebeb
+        width: 20px
+        height: 20px
+        &.tns-nav-active
+          background-color: #b4b4b4
+
+  &--hero
+    &__wrap
+      .tns-nav
+        position: absolute
+        z-index: 1
+        bottom: 45px
+        width: 100%
+        left: 0
+  &--clients
+    &__wrap
+      .tns-ovh
+        padding-top: 20px
+        padding-bottom: 20px
+    .slide
+      &__img
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        background-size: auto
+        height: 100px
+        background-color: $white
+        +flex(center, center)
+        +tr(box-shadow .3s)
+        img
+          filter: grayscale(100%)
+          opacity: .2
+          +tr(opacity .3s, filter .3s)
+        +hover
+          box-shadow: 0px 3px 22px 0px rgba(0, 0, 0, 0.13)
+          img
+            filter: grayscale(0)
+            opacity: 1

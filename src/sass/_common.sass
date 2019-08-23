@@ -1,0 +1,83 @@
+body
+  background: $white
+  line-height: 1.4
+  font-size: $fz
+  min-width: 320px
+  font-family: 'helveticaneuecyr', Arial, sans-serif
+  color: $c-text
+  font-weight: 300
+  +no-scroll
+  +sm
+    font-size: $fz-sm
+
+.icon
+  display: inline-block
+  fill: currentColor
+  font-size: inherit
+
+.lazy
+  &.is-loaded
+    animation: fadeIn 1s
+
+.container
+  max-width: 1440px
+  padding-left: 15px
+  padding-right: 15px
+  margin-left: auto
+  margin-right: auto
+
+.logo
+  display: inline-block
+  font-size: 0
+
+.link
+  font-weight: 500
+  +tr(opacity .3s)
+  +hover
+    opacity: .7
+
+.price
+  font-size: $fz-xs
+  color: $black
+  font-weight: 700
+  strong
+    font-size: 2.77em
+    color: $accent
+
+.link-arrow
+  $this: &
+  font-weight: 500
+  +inline-flex(flex-start, center)
+  position: relative
+  +tr(color .3s)
+  +hover
+    #{$this}__arr
+      width: 30px
+  &__arr
+    display: inline-block
+    position: relative
+    width: 20px
+    margin-left: 15px
+    +tr(width .3s)
+    &::before,
+    &::after
+      content: ''
+      position: absolute    
+    &::before
+      height: 1px
+      background-color: currentColor
+      width: 100%
+      top: 50%
+      right: 0
+      transform: translate(0, -50%)
+    &::after
+      +icon-arrow(10, 10, 1, currentColor, -45)
+      position: absolute
+      top: 50%
+      transform: translate(0, -50%) rotate(-135deg)
+      right: 0
+  &--sm
+    font-size: 15px
+    color: inherit
+
+

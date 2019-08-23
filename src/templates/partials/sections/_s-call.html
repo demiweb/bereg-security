@@ -1,0 +1,80 @@
+<!-- begin section -->
+<section class="section section--gray section--simple">
+  <div class="section-img is-right-50 is-bottom">
+    <img class="js-lazy" alt="" data-src="./img/dude.png"/>
+  </div>
+  <div class="container">
+    <!-- begin call-form -->
+    <div class="call-form">
+      <div class="row">
+        <div class="col-4">
+          <div class="call-form__title">
+            <div class="title title--h3 title--white">Желаете задать нам вопрос?</div>
+          </div>
+
+          <div class="call-form__subttl">Наш контактный центр работает с 10:00 до 19:00 (Пн-Пт). 
+Введите ваши данные и мы перезвоним вам!</div>
+        </div>
+
+        <div class="col-7">
+          <div class="call-form__form">
+            <!-- begin form -->
+            <div class="form form--hor">
+              <form>
+                <div class="form__inner">
+                  <div class="form__row">
+                    <div class="form__col">
+                      {{ mixins.input(
+                        name = 'input',
+                        mod = '',
+                        type = 'text',
+                        placeholder = 'Введите имя',
+                        value = '',
+                        fieldClass = ''
+                      ) }}
+                    </div>
+                    <div class="form__col">
+                      {{ mixins.input(
+                        name = 'input',
+                        mod = '',
+                        type = 'tel',
+                        placeholder = 'Введите телефон',
+                        value = '',
+                        fieldClass = ''
+                      ) }}
+                    </div>
+                    <div class="form__col">
+                      {{ mixins.btn(
+                        title = 'Заказать звонок',
+                        mod = '',
+                        combine = true,
+                        icon = mixins.icon('support'),
+                        href = false
+                      ) }}
+                    </div>
+                  </div>
+
+                  <div class="form__checkbox">
+                    {{ mixins.input(
+                      name = 'checkbox',
+                      mod = '',
+                      type = 'checkbox',
+                      placeholder = '',
+                      value = '',
+                      fieldClass = '',
+                      label = { span: true, last: 'Принимаю соглашение <a href="#">о политике конфиденциальности</a>' },
+                      fieldAttributes = { checked: '' }
+                    ) }}
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- end form -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end call-form -->
+  </div>
+</section>
+<!-- end section -->

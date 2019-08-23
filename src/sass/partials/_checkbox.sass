@@ -1,0 +1,30 @@
+.checkbox
+  position: relative
+  padding-left: 1.3em
+  user-select: none
+  font-size: $fz-xs
+  input[type="checkbox"]
+    opacity: 0
+    visibility: hidden
+    position: absolute
+    &:checked + span
+      &::after
+        content: ''
+        +icon-arrow(.6, .3, .05, $accent, -45, em)
+        top: .3em
+        left: .15em
+        position: absolute
+        display: block
+  span
+    &::before
+      content: ''
+      border: 1px solid currentColor
+      width: .9em
+      height: .9em
+      top: .1em
+      left: 0
+      background-color: transparent
+      position: absolute
+      display: block
+  a
+    text-decoration: underline

@@ -1,0 +1,11 @@
+.nav
+  li
+    display: inline-block
+    +notlast
+      margin-right: 55px
+  a
+    +tr(color .3s)
+    +hover
+      color: $c-text
+    &.is-active
+      color: $c-text

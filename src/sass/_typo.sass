@@ -1,0 +1,26 @@
+strong
+  font-weight: 700
+  // +bold
+
+small
+  font-size: inherit
+
+em, i
+  // font-style: normal
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 400
+
+.title
+  +css-lock(21, 36, 320, 1399, font-size)
+  line-height: 1
+  color: $black
+  font-weight: 700
+  &--h3
+    +css-lock(20, 24, 320, 1399, font-size)
+  &--h4
+    +css-lock(18, 21, 320, 1399, font-size)
+  &--white
+    color: $white
+  &--ttu
+    text-transform: uppercase
