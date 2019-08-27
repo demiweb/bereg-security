@@ -1,11 +1,32 @@
 .nav
   li
     display: inline-block
+    +md
+      display: block
+      margin-bottom: 15px
     +notlast
       margin-right: 55px
+      +xl
+        margin-right: 35px
+      +lg
+        margin-right: 10px
   a
     +tr(color .3s)
     +hover
       color: $c-text
     &.is-active
       color: $c-text
+
+  &--footer
+    li
+      display: block
+      +notlast
+        margin-right: 0
+        margin-bottom: 10px
+        +xl
+          margin-right: 0
+        +md
+          margin-bottom: 5px
+    a
+      +hover
+        color: $gray-light

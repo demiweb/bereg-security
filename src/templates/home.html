@@ -1,8 +1,14 @@
 ---
 title: Index page
 hero: {
-  upttl: 'Мгновенное реагирование <span class="accent">до 15 минут</span>',
-  title: '«Берег» - вы в надежных руках!',
+  bgImage: 'bg-hero-home-01.jpg',
+  mod: 'hero--slider',
+  slider: true,
+  upttl: 'Мгновенное реагирование <strong class="accent accent--bg">до 15 минут</strong>',
+  title: {
+    title: '«Берег» - вы в надежных руках!',
+    mod: 'title--bold'
+  },
   subttl: 'Полный  спектр услуг охранной и пожарной сигнализации, 
 систем контроля доступа и видеонаблюдения «под ключ»',
   btns: [
@@ -31,10 +37,12 @@ hero: {
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
-  {% include "partials/_header.html" %}
   {% include "partials/_hero.html" %}
   {% include "partials/sections/_s-features.html" %}
   {% include "partials/sections/_s-services.html" %}
   {% include "partials/sections/_s-call.html" %}
   {% include "partials/sections/_s-clients.html" %}
+  {% include "partials/sections/_s-tech.html" %}
+  {% include "partials/sections/_s-news.html" %}
+  {% include "partials/sections/_s-seo.html" %}
 {% endblock %}

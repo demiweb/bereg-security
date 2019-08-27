@@ -1,0 +1,90 @@
+{%set
+featuresCircle = {
+  list: [
+    {
+      img: '01.png',
+      text: 'Мгновенно реагирует на появление <br>
+дыма и высокий уровень газа'
+    },
+    {
+      img: '02.png',
+      text: 'Сразу сообщает о потопе, <br>
+      прорыве трубы или течи <br>
+стиральной машины'
+    },
+    {
+      img: '03.png',
+      text: 'Уведомление о тревогах <br>
+с помощью 
+SMS, push-сообщений <br>
+и звонка на номер владельца'
+    },
+    {
+      img: '04.png',
+      text: 'Самостоятельная установка <br>
+системы за 15 минут.'
+    },
+    {
+      img: '05.png',
+      text: 'Удобное управление и настройка <br>
+с помощью мобильного приложения <br>
+на iOS и Android;',
+      reverse: true
+    },
+    {
+      img: '06.png',
+      text: 'Система работает с датчиками <br>
+разных типов и назначения, ',
+      reverse: true
+    },
+    {
+      img: '07.png',
+      text: 'Мгновенно сообщает,<br>
+если в дом забрались воры ',
+      reverse: true
+    }
+  ]
+}
+%}  
+
+<!-- begin features-circle -->
+<div class="features-circle">
+  {% for i in featuresCircle.list %}
+  {% if i.reverse %}
+  <!-- begin feature-circle -->
+  <div class="feature-circle">
+    <div class="feature-circle__text">{{ i.text | safe }}</div>
+
+    <div class="feature-circle__img">
+      <img class="js-lazy" alt="" data-src="./img/features/circle/{{ i.img }}"/>
+    </div>
+  </div>
+  <!-- end feature-circle -->
+  {% else %}
+  <!-- begin feature-circle -->
+  <div class="feature-circle">
+    <div class="feature-circle__img">
+      <img class="js-lazy" alt="" data-src="./img/features/circle/{{ i.img }}"/>
+    </div>
+
+    <div class="feature-circle__text">{{ i.text | safe }}</div>
+  </div>
+  <!-- end feature-circle -->
+  {% endif %}
+  
+  {% endfor %}
+
+  <div class="features-circle__img js-lazy" data-background-image="./img/features/circle/lg-01.png">
+    {# <img class="js-lazy" alt="" data-src="./img/features/circle/lg-01.png"/> #}
+  </div>
+
+  <div class="features-circle__btn">
+    {{ mixins.btn(
+      title = 'Проверить лично',
+      mod = '',
+      combine = true,
+      icon = mixins.icon('analytics')
+    ) }}
+  </div>
+</div>
+<!-- end features-circle -->

@@ -5,16 +5,23 @@
     z-index: 1
   &__title
     margin-bottom: 15px
+    text-align: center
     +sm
       margin-bottom: 10px
   &__subttl
     margin-bottom: 50px
+    text-align: center
     +lg
       margin-bottom: 40px
     +md
       margin-bottom: 25px
     +sm
       margin-bottom: 15px
+  &__img
+    font-size: 0
+  &__s-text
+    +sm
+      margin-bottom: 25px
 
   &--gray
     background-color: $gray
@@ -27,6 +34,15 @@
     +lg
       padding-top: 30px
       padding-bottom: 30px
+  &--img
+    .lazy
+      &.is-loaded
+        position: relative
+        right: -15%
+        +lg
+          right: auto
+  &--bg
+    +cover
 
 .section-img
   position: absolute

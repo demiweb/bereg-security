@@ -1,0 +1,108 @@
+<!-- begin footer -->
+<footer class="footer pt-mdl pb-mdl">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="row">
+        <div class="col-xl-2">
+          <div class="footer__logo">
+            <a href="/" class="logo"><img class="js-lazy" alt="" data-src="./img/logo.png"/></a>
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-md-4 col-sm-4 col-6">
+          <div class="footer__block">
+            <div class="footer__title">
+              <div class="title title--h4 title--bold">Клиентам</div>
+            </div>
+
+            <div class="footer__nav">
+              {{ mixins.list(
+                name = 'nav',
+                modifications = { wrap: 'nav--footer', item: '', link: '' },
+                list = [
+                  { link: 'Услуги' },
+                  { link: 'Цены' },
+                  { link: 'Заказать' }
+                ]
+              ) }}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-md-4 col-sm-4 col-6">
+          <div class="footer__block">
+            <div class="footer__title">
+              <div class="title title--h4 title--bold">О компании</div>
+            </div>
+
+            <div class="footer__nav">
+              {{ mixins.list(
+                name = 'nav',
+                modifications = { wrap: 'nav--footer', item: '', link: '' },
+                list = [
+                  { link: 'О нас' },
+                  { link: 'Отзывы' },
+                  { link: 'Статьи' }
+                ]
+              ) }}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4">
+          <div class="footer__block">
+            <div class="footer__title">
+              <div class="title title--h4 title--bold">Телефоны</div>
+            </div>
+
+            <div class="footer__nav">
+              {{ mixins.list(
+                name = '',
+                modifications = { wrap: 'nav nav--footer', item: '', link: '' },
+                noClass = true,
+                list = [
+                  { link: '+38 (044) 559-86-80', href: 'tel:+380445598680' },
+                  { link: '+38 (044) 200-23-03', href: 'tel:+380442002303' },
+                  { link: '+38 (096) 007-04-97', href: 'tel:+380960070497' }
+                ]
+              ) }}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-5">
+          <div class="footer__block">
+            <div class="footer__title">
+              <div class="title title--h4 title--bold">Информация</div>
+            </div>
+
+            <div class="footer__block-block">
+              <div class="footer__nav">
+                {{ mixins.list(
+                  name = '',
+                  modifications = { wrap: 'nav nav--footer', item: '', link: '' },
+                  noClass = true,
+                  list = [
+                    { item: 'Лицензии и сертификаты' },
+                    { item: 'Политика конфиденциальности' },
+                    { item: 'Часто задаваемые вопросы' }
+                  ]
+                ) }}
+              </div>
+
+              <div class="footer__time">
+                {{ mixins.icon('time-left') }}
+                10:00-19:00 (Пн-Пт)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 offset-xl-8">
+          <div class="footer__auth">Разработка сайта <a href="#">Demiweb International</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->

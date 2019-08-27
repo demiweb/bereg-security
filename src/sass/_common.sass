@@ -16,8 +16,21 @@ body
   font-size: inherit
 
 .lazy
-  &.is-loaded
+  &.is-loaded:not(.no-animation)
     animation: fadeIn 1s
+
+.out
+  padding-top: $header-height
+  +md
+    padding-top: $header-height-md
+  +xs
+    padding-top: $header-height-xs
+  &.has-header-short
+    padding-top: $header-bottom-height
+    +md
+      padding-top: $header-height-md
+    +xs
+      padding-top: $header-height-xs
 
 .container
   max-width: 1440px
@@ -29,6 +42,10 @@ body
 .logo
   display: inline-block
   font-size: 0
+  +md
+    width: 110px
+  +xs
+    width: 70px
 
 .link
   font-weight: 500
@@ -43,6 +60,10 @@ body
   strong
     font-size: 2.77em
     color: $accent
+    line-height: 1
+  &__title
+    color: $c-text
+    // font-weight: 700
 
 .link-arrow
   $this: &
@@ -80,4 +101,52 @@ body
     font-size: 15px
     color: inherit
 
+.date
+  font-size: $fz-xs
+  position: relative
+  padding-left: 50px
+  +before
+    width: 45px
+    display: inline-block
+    height: 1px
+    background-color: currentColor
+    top: 50%
+    transform: translate(0, -50%)
+    left: 0
+    position: absolute
 
+.scroll-text
+  max-height: 530px
+  overflow: auto
+  h1, h2
+    font-weight: 700
+
+  h1
+    font-size: 1.3em
+  h2
+    font-size: 1.125em
+
+  a
+    color: $blue
+    text-decoration: underline
+
+  h1, h2, ul, ol, p, article
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+
+  ol
+    list-style-type: decimal
+    margin-left: 1.1em
+    li
+      margin-bottom: 30px
+      +md
+        margin-bottom: 15px
+
+  ul
+    li
+      &::before
+        content: '-'
+        display: inline-block
+        vertical-align: baseline
+        margin-right: 5px

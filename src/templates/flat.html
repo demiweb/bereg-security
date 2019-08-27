@@ -1,0 +1,29 @@
+---
+title: flat
+hero: {
+  title: {
+    title: 'Охрана <strong>квартир</strong>',
+    mod: 'title--lg'
+  },
+  colClass: 'col-12',
+  breadcrumbs: {
+    list: [
+      { link: 'Главная' },
+      { item: '-' },
+      { link: 'Услуги' },
+      { item: '-' },
+      { link: 'Охрана квартир', modLink: 'is-active' }
+    ]
+  },
+  bgImage: 'bg-hero-flat.jpg'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-packege.html" %}
+  {% include "partials/sections/_s-tech.html" %}
+  {% include "partials/sections/_s-features-color.html" %}
+  {% include "partials/sections/_s-appartment.html" %}
+{% endblock %}

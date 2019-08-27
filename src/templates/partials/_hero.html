@@ -1,73 +1,13 @@
 <!-- begin hero -->
-<section class="hero">
+<section class="hero{% if hero.mod %} {{ hero.mod }}{% endif %}">
+  {% if hero.slider %}
   <div class="hero__slider">
     <!-- begin slider -->
     <div class="slider__wrap slider--hero__wrap">
       <div class="slider slider--hero js-slider" data-slider="hero">
         {% for i in range(0, 4) %}
         <div class="slide">
-          <!-- begin hero-inner -->
-          <div class="hero-inner js-lazy" data-background-image="./img/hero/bg-hero-home-01.jpg">
-            <div class="container">
-              <div class="row">
-                <div class="col-5">
-                  <div class="hero-inner__content">
-                    {% if hero.upttl %}
-                    <div class="hero-inner__uptitle">{{ hero.upttl | safe }}</div>
-                    {% endif %}
-
-                    {% if hero.title %}      
-                    <div class="hero-inner__title">
-                      <div class="title title--white">{{ hero.title | safe }}</div>
-                    </div>
-                    {% endif %}
-
-                    {% if hero.subttl %}
-                    <div class="hero-inner__subttl">{{ hero.subttl | safe }}</div>
-                    {% endif %}
-                    
-                    {% if hero.btns %}
-                    <div class="hero-inner__btns">
-                      {% for i in hero.btns %}
-                      <div class="hero-inner__btn{% if i.wrapMod %} {{ i.wrapMod }}{% endif %}">
-                        {% if i.icon %}
-                        {{ mixins.btn(
-                          title = i.title,
-                          mod = i.mod,
-                          href = i.href,
-                          combine = i.combine,
-                          icon = mixins.icon(i.icon)
-                        ) }}
-                        {% elseif i.link %}                        
-                        <a href="#" class="link">{{ i.link | safe }}</a>
-                        {% endif %}
-                      </div>
-                      {% endfor %}
-                    </div>
-                    {% endif %}
-
-                    {% if hero.features %}
-                    <div class="hero-inner__features">
-                      <!-- begin hero-features -->
-                      <div class="hero-features{% if hero.features.mod %} {{ hero.features.mod }}{% endif %}">
-                        {% for i in hero.features.items %}
-                        <!-- begin hero-feature -->
-                        <div class="hero-feature">
-                          <div class="hero-feature__icon">{{ mixins.icon(i.icon) }}</div>
-                          <div class="hero-feature__title">{{ i.title | safe }}</div>
-                        </div>
-                        <!-- end hero-feature -->
-                        {% endfor %}
-                      </div>
-                      <!-- end hero-features -->                      
-                    </div>
-                    {% endif %}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end hero-inner -->
+          {% include "partials/_hero-inner.html" %}
         </div>
         {% endfor %}
       </div>
@@ -80,5 +20,9 @@
     </div>
     <!-- end slider -->
   </div>
+  {% else %}
+  
+  {% include "partials/_hero-inner.html" %}
+  {% endif %}
 </section>
 <!-- end hero -->

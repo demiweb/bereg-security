@@ -5,6 +5,9 @@ import sayHello from './lib/sayHello';
 import { setTouch, setReady } from './components/setHTMLClassNames';
 import setLazy from './components/setLazy';
 import setSliders from './components/setSliders';
+import setScrollbar from './components/setScrollbar';
+import setFixedHeader from './components/setFixedHeader';
+import toggleMenu from './components/toggleMenu';
 
 $(() => {
   sayHello();
@@ -12,4 +15,7 @@ $(() => {
   setReady();
   setLazy();
   setSliders();
+  setScrollbar();
+  setFixedHeader();
+  toggleMenu();
 });

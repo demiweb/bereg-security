@@ -1,0 +1,78 @@
+<!-- begin hero-inner -->
+<div class="hero-inner{% if hero.bgImage %} js-lazy{% endif %}" {% if hero.bgImage %}data-background-image="./img/hero/{{ hero.bgImage }}"{% endif %}>
+  
+
+  <div class="hero-inner__content">
+    {% if hero.breadcrumbs %}
+    <div class="hero-inner__breadcrumbs">
+      <div class="container">
+       {{ mixins.list(
+         name = 'breadcrumbs',
+         modifications = { wrap: hero.breadcrumbs.mod, item: '', link: '' },
+         list = hero.breadcrumbs.list
+       ) }}
+     </div>
+    </div>
+    {% endif %}
+    
+    <div class="container">
+      <div class="row">
+        <div class="{% if hero.colClass %}{{hero.colClass}}{% else %}col-xl-5 col-lg-6 col-md-8 col-sm-8{% endif %}">
+          {# <div class="hero-inner__content"> #}
+            {% if hero.upttl %}
+            <div class="hero-inner__uptitle">{{ hero.upttl | safe }}</div>
+            {% endif %}
+
+            {% if hero.title %}      
+            <div class="hero-inner__title">
+              <div class="title title--white{% if hero.title.mod %} {{ hero.title.mod }}{% endif %}">{{ hero.title.title | safe }}</div>
+            </div>
+            {% endif %}
+
+            {% if hero.subttl %}
+            <div class="hero-inner__subttl">{{ hero.subttl | safe }}</div>
+            {% endif %}
+            
+            {% if hero.btns %}
+            <div class="hero-inner__btns">
+              {% for i in hero.btns %}
+              <div class="hero-inner__btn{% if i.wrapMod %} {{ i.wrapMod }}{% endif %}">
+                {% if i.icon %}
+                {{ mixins.btn(
+                  title = i.title,
+                  mod = i.mod,
+                  href = i.href,
+                  combine = i.combine,
+                  icon = mixins.icon(i.icon)
+                ) }}
+                {% elseif i.link %}                        
+                <a href="#" class="link">{{ i.link | safe }}</a>
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if hero.features %}
+            <div class="hero-inner__features">
+              <!-- begin hero-features -->
+              <div class="hero-features{% if hero.features.mod %} {{ hero.features.mod }}{% endif %}">
+                {% for i in hero.features.items %}
+                <!-- begin hero-feature -->
+                <div class="hero-feature">
+                  <div class="hero-feature__icon">{{ mixins.icon(i.icon) }}</div>
+                  <div class="hero-feature__title">{{ i.title | safe }}</div>
+                </div>
+                <!-- end hero-feature -->
+                {% endfor %}
+              </div>
+              <!-- end hero-features -->                      
+            </div>
+            {% endif %}
+          {# </div> #}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end hero-inner -->

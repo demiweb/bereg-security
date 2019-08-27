@@ -22,8 +22,16 @@
     #{$this}__price
       visibility: hidden
       opacity: 0
+  +xs
+    margin-bottom: 15px
+    height: auto
   &__title
     margin-bottom: 10px
+    position: relative
+    z-index: 1
+  &__subttl
+    position: relative
+    z-index: 1
   &__btn
     margin-bottom: 20px
     +md
@@ -38,6 +46,7 @@
     padding-top: 80%
     img
       +vcenter
+      z-index: 0
   &__price
     position: absolute
     bottom: -125px
@@ -68,6 +77,8 @@
     box-shadow: none
     +hover
       border-color: transparent
+    .service-link
+      // flex: 0 0 265px
 
 .service-link
   +flex(center, center)
@@ -76,7 +87,11 @@
   width: 265px
   height: 265px
   color: $white
+  padding: 10px
   +hover
     .link-arrow
       &__arr
         width: 30px
+  +md
+    width: 215px
+    height: 215px

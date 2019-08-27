@@ -1,5 +1,5 @@
 <!-- begin header -->
-<header class="header">
+<header class="header js-header">
   <div class="header__top">
     <div class="container">
       <div class="header__inner">
@@ -43,8 +43,29 @@
   <div class="header__bottom">
     <div class="container">
       <div class="header__inner">
-        <div class="header__nav">
-          {% include "partials/_nav.html" %}
+        <div class="header__nav js-menu">
+          <button class="header__nav-close js-menu-close"></button>
+
+          <div class="header__nav-in">
+
+            {% include "partials/_nav.html" %}
+
+            <div class="header__contacts-mob">
+              <!-- begin header-contacts -->
+              <div class="header-contacts">
+                <div class="header-contact">
+                  <a href="tel:+380960070497">+38 (096) 007-04-97</a>
+                </div>
+                <div class="header-contact">
+                  <a href="tel:+380445598680">+38 (044) 559-86-80</a>
+                </div>
+                <div class="header-contact">
+                  <a href="tel:+380442002303">+38 (044) 200-23-03</a>
+                </div>
+              </div>
+              <!-- end header-contacts -->
+            </div>
+          </div>
         </div>
 
         <div class="header__btn">
@@ -55,6 +76,10 @@
             href = false,
             icon = mixins.icon('support')
           ) }}
+        </div>
+
+        <div class="header__burger">
+          <button class="burger js-burger"><span></span></button>
         </div>
       </div>
     </div>

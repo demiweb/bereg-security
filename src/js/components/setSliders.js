@@ -47,13 +47,29 @@ export default function setSliders() {
       },
       clients: {
         container,
-        items: 5,
+        items: 2,
         prevButton: prev,
         nextButton: next,
         onInit: setLazy,
         mouseDrag: true,
         nav: false,
         gutter: 30,
+        responsive: {
+          320: {
+            items: 2,
+            nav: true,
+          },
+          576: {
+            items: 3,
+            nav: false,
+          },
+          768: {
+            items: 4,
+          },
+          992: {
+            items: 5,
+          },
+        },
       },
     };
   }

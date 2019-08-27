@@ -8,12 +8,29 @@
     width: 33.33333%
     padding-left: 2px
     padding-right: 2px
+    +sm
+      width: 50%
+      margin-bottom: 4px
+    +xs
+      width: 100%
+  &__col-sm
+    +sm
+      width: 100%
 
 .input
   input
     background-color: $white
     padding: 5px 15px
-    height: 45px
+    height: 44px
     width: 100%
+    border: 1px solid $white
+    +tr(border-color .3s)
     +placeholder
       color: $gray-light
+    +md
+      padding: 5px 10px
+    +sm
+      height: 40px
+      padding: 5px
+    &:focus
+      border-color: $accent

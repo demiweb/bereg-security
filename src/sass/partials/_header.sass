@@ -1,27 +1,105 @@
 .header
   $this: &
   background-color: $white
-  position: relative
-  z-index: 10
+  position: fixed
+  z-index: 15
   color: $black
+  left: 0
+  right: 0
+  top: 0
+  +ready
+    +tr(transform .3s, top .3s)
+  &.is-short
+    top: -$header-top-height
+    +md
+      top: -$header-top-height-md
+    +xs
+      top: -$header-top-height-xs
   &__top
     border-bottom: 1px solid $white-dark
+    height: $header-top-height
+    +ready
+      +tr(transform .3s, height .3s)
+    +md
+      height: $header-top-height-md
+    +xs
+      height: $header-top-height-xs
   &__bottom
-    padding-left: 50px
+    height: $header-bottom-height
+    border-bottom: 1px solid $white-dark
+    +ready
+      +tr(transform .3s, height .3s)
+    +md
+      height: $header-bottom-height-md
     #{$this}__inner
       justify-content: space-between
   &__inner
     +flex(flex-start, center)
     padding-top: 12px
     padding-bottom: 12px
+    +md
+      padding-top: 6px
+      padding-bottom: 6px
+    +sm
+      justify-content: space-between
   &__contacts
     flex-grow: 1
+    +sm
+      display: none
+  &__contacts-mob
+    display: none
+    +sm
+      display: block
   &__lang
     text-align: center
     flex: 0 0 210px
+    +md
+      flex: 0 0 80px
+    +sm
+      flex: 0 0 auto
+  &__nav
+    +md
+      position: fixed
+      z-index: 15
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      padding: 15px
+      background-color: $white
+      +vertical
+      overflow: auto
+      transform: translate(0, -100%)
+      +ready
+        +tr(transform .3s)
+      &.is-active
+        transform: translate(0, 0)
+  &__nav-in
+    position: relative
+    +md
+      display: inline-block
+      vertical-align: middle
+      font-size: $fz
+    +sm
+      font-size: $fz-sm
+  &__burger
+    display: none
+    +md
+      display: block
+  &__nav-close    
+    +icon-close(20, 1, currentColor)
+    position: absolute
+    z-index: 1
+    top: 15px
+    right: 15px
+    display: none
+    +md
+      display: block
 
 .header-contacts
   +flex(flex-start, center)
+  +xss
+    display: block
 
 .header-contact
   width: 33.33333%
@@ -32,6 +110,16 @@
   text-align: center
   +notlast
     border-right: 1px solid  $white-dark
+  +md
+    font-size: 18px
+  +sm
+    font-size: $fz
+    margin-right: 10px
+    margin-right: 10px
+    +notlast
+      border-right: 0
+  +xss
+    width: auto
 
 .lang
   $this: &
@@ -40,6 +128,8 @@
   display: inline-block
   padding-left: 15px
   padding-right: 15px
+  +sm
+    padding-right: 0
   &:hover
     #{$this}__list
       display: block
@@ -64,6 +154,39 @@
     padding-left: 15px
     padding-right: 15px
     display: none
+    box-shadow: 0 0 5px rgba($black, .5)
   &__link
     display: block
     margin-bottom: 10px
+    +tr(color .3s)
+    +hover
+      color: $c-text
+
+.burger 
+  display: block
+  width: 28px
+  height: 28px
+  margin-top: -18px
+  span:after, span:before 
+    content: ""
+    position: absolute
+    left: 0
+    top: 9px
+  span:after
+    top: 18px
+  span 
+    position: relative
+    display: block
+  span, span:after, span:before
+    width: 100%
+    height: 2px
+    background-color: currentColor
+    // transition: all 0.3s
+    backface-visibility: hidden
+    border-radius: 2px
+  // &.is-active span 
+  //   background-color: transparent
+  // &.is-active span:before 
+  //   transform: rotate(45deg) translate(-1px, 0px)
+  // &.is-active span:after 
+  //   transform: rotate(-45deg) translate(6px, -7px)

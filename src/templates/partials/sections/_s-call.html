@@ -7,7 +7,7 @@
     <!-- begin call-form -->
     <div class="call-form">
       <div class="row">
-        <div class="col-4">
+        <div class="col-xl-4 col-lg-4 col-md-6">
           <div class="call-form__title">
             <div class="title title--h3 title--white">Желаете задать нам вопрос?</div>
           </div>
@@ -16,7 +16,7 @@
 Введите ваши данные и мы перезвоним вам!</div>
         </div>
 
-        <div class="col-7">
+        <div class="col-xl-7 col-lg-8">
           <div class="call-form__form">
             <!-- begin form -->
             <div class="form form--hor">
@@ -43,10 +43,10 @@
                         fieldClass = ''
                       ) }}
                     </div>
-                    <div class="form__col">
+                    <div class="form__col form__col-sm">
                       {{ mixins.btn(
                         title = 'Заказать звонок',
-                        mod = '',
+                        mod = 'btn--full',
                         combine = true,
                         icon = mixins.icon('support'),
                         href = false

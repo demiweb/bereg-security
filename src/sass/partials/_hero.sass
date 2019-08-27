@@ -1,10 +1,27 @@
 .hero
+  text-align: center
+  &--slider
+    text-align: left
  
 .hero-inner
-  color: $white
-  padding-top: 10%
-  padding-bottom: 10%
+  color: $white  
   +cover
+  +lg
+    +before
+      +coverdiv
+      background-color: rgba($black, .1)
+      z-index: 0
+  .container
+    width: 100%
+    flex-grow: 1
+    +flex(center, normal, column)
+  &__content
+    position: relative
+    z-index: 1
+    padding-top: 25px
+    padding-bottom: 25px
+    min-height: calc(100vh - #{$header-height})
+    +flex(center, normal, column)
   &__uptitle
     margin-bottom: 10px
     font-size: 18px
@@ -27,6 +44,11 @@
       margin-bottom: 30px
     +md
       margin-bottom: 15px
+    +sm
+      display: block
   &__btn
     +notlast
       margin-right: 30px
+      +sm
+        margin-right: 0
+        margin-bottom: 15px
