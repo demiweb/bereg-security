@@ -36,44 +36,7 @@ news = [
 знаем, как предоставить заказчикам надежную <br>
 и эффективную услугу.</div>
 
-    <!-- begin news -->
-    <div class="news">
-      <div class="row">
-        {% for i in news %}
-        <div class="col-md-6">
-          <!-- begin news-item -->
-          <div class="news-item">
-            <div class="news-item__img js-lazy" data-background-image="./img/news/01.jpg"></div>
-
-            <div class="news-item__content">
-              <div class="news-item__meta">
-                <div class="news-item__meta-title">{{ i.meta.title }}</div>
-                <div class="date">28.08.2019</div>
-              </div>
-
-              <div class="news-item__title">
-                <div class="title title--h4 title--bold title--accent">{{ i.title | safe }}</div>
-              </div>
-
-              <div class="news-item__text">Устанавливайте систему охраны Ajax оолее, чем на 3 объектаодновременно
-и получайте четвертый набор совершенно бесплатно. Акция действует только до 21.09.2019. В акции могут принимать как новые, так и постоянные клиенты...</div>
-
-              <div class="news-item__btn">
-                {{ mixins.btn(
-                  title = 'Подробнее',
-                  mod = '',
-                  combine = true,
-                  icon = mixins.icon('eye')
-                ) }}
-              </div>
-            </div>
-          </div>
-          <!-- end news-item -->
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-    <!-- end news -->
+    {% include "partials/_news.html" %}
   </div>
 </section>
 <!-- end section -->

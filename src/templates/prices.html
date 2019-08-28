@@ -1,0 +1,29 @@
+---
+title: prices
+page: prices
+hero: {
+  title: {
+    title: 'Наши <strong>цены</strong>',
+    mod: 'title--lg'
+  },
+  colClass: 'col-12',
+  breadcrumbs: {
+    list: [
+      { link: 'Главная' },
+      { item: '-' },
+      { link: 'Цены', modLink: 'is-active' }
+    ]
+  },
+  bgImage: 'bg-hero-prices.jpg'
+}
+sectionCall: {
+  mod: 's-call s-call--mt'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-prices.html" %}
+  {% include "partials/sections/_s-call.html" %}
+{% endblock %}

@@ -1,17 +1,17 @@
 import baron from 'baron';
 import { isWebkit } from '../helpers';
 
-class Scroll {
+class Scrollbar {
   constructor(container) {
     this.container = container;
   }
 
   init() {
-    this.addElements();
+    this.createElements();
     this.initPlugin();
   }
 
-  addElements() {
+  createElements() {
     this.inner = document.createElement('div');
     this.track = document.createElement('div');
     this.bar = document.createElement('div');
@@ -20,11 +20,11 @@ class Scroll {
     const content = this.container.innerHTML;
     this.container.innerHTML = '';
 
-    this.inner.className = 'scrollbar__inner';
+    this.inner.className = Scrollbar.classNames.inner;
     this.inner.innerHTML = content;
     this.inner.style.maxHeight = maxHeight;
-    this.track.className = 'scrollbar__track';
-    this.bar.className = 'scrollbar__bar';
+    this.track.className = Scrollbar.classNames.track;
+    this.bar.className = Scrollbar.classNames.bar;
 
     this.track.appendChild(this.bar);
     this.container.appendChild(this.inner);
@@ -33,11 +33,19 @@ class Scroll {
 
   initPlugin() {
     this.plugin = baron({
-      root: this.inner,
+      root: this.container,
+      scroller: this.inner,
       bar: this.bar,
+      // barOnCls: 'is-init',
     });
   }
 }
+
+Scrollbar.classNames = {
+  inner: 'scrollbar__inner',
+  track: 'scrollbar__track',
+  bar: 'scrollbar__bar',
+};
 
 export default function setScrollbar() {
   if (isWebkit) return;
@@ -46,7 +54,7 @@ export default function setScrollbar() {
   if (!containers.length) return;
 
   containers.forEach((container) => {
-    const scroll = new Scroll(container);
+    const scroll = new Scrollbar(container);
     scroll.init();
   });
 }

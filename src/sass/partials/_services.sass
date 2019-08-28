@@ -13,7 +13,7 @@
   height: calc(100% - 30px)
   margin-bottom: 30px
   +tr(border-color .3s, transform .3s)
-  +hover
+  &:hover
     border-color: $accent
     +scale(1.02)
     #{$this}__btns
@@ -47,6 +47,7 @@
     img
       +vcenter
       z-index: 0
+      max-height: 100%
   &__price
     position: absolute
     bottom: -125px
@@ -62,6 +63,8 @@
     +tr(opacity .3s, visibility .3s)
     .price
       display: inline-block
+    +md
+      bottom: -150px
   &__btns
     visibility: hidden
     opacity: 0
@@ -71,6 +74,9 @@
     transform: translate(-50%, 0)
     z-index: 1
     +tr(opacity .3s, visibility .3s)
+    width: 100%
+    padding-left: 15px
+    padding-right: 15px
 
   &--link
     +flex(center, center)
@@ -79,6 +85,73 @@
       border-color: transparent
     .service-link
       // flex: 0 0 265px
+  
+  &--hor
+    padding: 0
+    text-align: left
+    +flex(flex-start, normal, row, wrap)
+    &:hover
+      #{$this}__price
+        visibility: visible
+        opacity: 1
+    +md
+      padding-bottom: 60px
+    +sm
+      padding-top: 15px
+    #{$this}__img
+      width: percentage(3/12)
+      padding-top: 22%
+      img
+        max-width: 90%
+      +sm
+        width: 100%
+        padding-top: 30%
+      +xs
+        padding-top: 40%
+    #{$this}__content
+      width: percentage(9/12)
+      +flex(center, normal, column)
+      padding: 15px
+      +sm
+        width: 100%
+    #{$this}__btns
+      position: static
+      visibility: visible
+      opacity: 1
+      transform: translate(0, 0)
+      padding-left: 0
+      padding-right: 0
+      +flex(flex-start, center)
+      +xs
+        display: block
+    #{$this}__btn
+      margin-bottom: 0
+      margin-right: 15px
+      +xs
+        margin-right: 0
+        margin-bottom: 10px
+    #{$this}__link
+      +flex(center, normal, column)
+    #{$this}__text
+      margin-bottom: 25px
+      +md
+        margin-bottom: 15px
+    #{$this}__price
+      bottom: -140px
+      padding-top: 3%
+      right: 0
+      left: auto
+      transform: translate(0, 0)
+      +md
+        bottom: -160px
+      +xs
+        left: 50%
+        right: auto
+        transform: translate(-50%, 0)
+        padding-top: 7%
+        bottom: -170px
+      
+
 
 .service-link
   +flex(center, center)

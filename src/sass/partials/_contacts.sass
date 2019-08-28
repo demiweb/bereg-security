@@ -1,0 +1,39 @@
+.contacts
+  +flex(flex-start, normal, row, wrap)
+  .contact
+    width: 50%
+    margin-bottom: 25px
+    +md
+      margin-bottom: 15px
+    +xss
+      width: 100%
+      margin-bottom: 5px
+  &__wrap
+    height: 100%
+    +flex(flex-start, normal, column)
+    +md
+      margin-bottom: 15px
+      height: auto
+  &__map
+    flex-grow: 1
+    width: 100%
+
+.contact
+  padding-left: 30px
+  padding-right: 15px
+  position: relative
+  &__icon
+    position: absolute
+    top: 0
+    left: 0
+    color: $black
+    .icon
+      font-size: 21px
+  &__content
+  &__title
+    margin-bottom: 10px
+    small
+      font-size: $fz-xs
+      color: $c-text
+      font-weight: 300
+      display: block

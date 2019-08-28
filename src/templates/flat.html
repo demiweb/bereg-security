@@ -1,5 +1,6 @@
 ---
 title: flat
+page: flat
 hero: {
   title: {
     title: 'Охрана <strong>квартир</strong>',
@@ -17,6 +18,15 @@ hero: {
   },
   bgImage: 'bg-hero-flat.jpg'
 }
+sectionFeatures: {
+  title: 'Нам можно <strong>доверять</strong>',
+  subttl: 'Мы работаем на рынке охранных услуг з 1997 года и соответственно <br>
+знаем, как предоставить заказчикам надежную <br>
+и эффективную услугу.'
+}
+sectionCall: {
+  mod: 's-call s-call--mt'
+}
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -26,4 +36,6 @@ hero: {
   {% include "partials/sections/_s-tech.html" %}
   {% include "partials/sections/_s-features-color.html" %}
   {% include "partials/sections/_s-appartment.html" %}
+  {% include "partials/sections/_s-features.html" %}
+  {% include "partials/sections/_s-call.html" %}
 {% endblock %}

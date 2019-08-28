@@ -1,0 +1,175 @@
+{%set
+tables = [
+  {
+    title: 'Охрана квартир',
+    rows: [
+      {
+        cols: [
+          { text: 'Ежемесячная абонентская плата' },
+          { price: true, text: '<div class="price"><strong>500</strong>грн</div>' }
+        ]
+      },
+      {
+        title: 'Монтаж и подключение с установкой оборудования'
+      },
+      {
+        cols: [
+          { text: 'Проводная сигнализация' },
+          { price: true, text: '<div class="price">От <strong>4000</strong>грн</div>' }
+        ]
+      },
+      {
+        cols: [
+          { text: 'Беспроводная сигнализация' },
+          { price: true, text: '<div class="price">От <strong>5000</strong>грн</div>' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Охрана домов',
+    rows: [
+      {
+        cols: [
+          { text: 'Ежемесячная абонентская плата' },
+          { price: true, text: '<div class="price">От <strong>500</strong>грн</div>' }
+        ]
+      },
+      {
+        title: 'Монтаж и подключение с установкой оборудования'
+      },
+      {
+        cols: [
+          { text: 'Проводная сигнализация' },
+          { price: true, text: '<div class="price">От <strong>4000</strong>грн</div>' }
+        ]
+      },
+      {
+        cols: [
+          { text: 'Беспроводная сигнализация' },
+          { price: true, text: '<div class="price">От <strong>5000</strong>грн</div>' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Охрана МАФов и киосков',
+    rows: [
+      {
+        cols: [
+          { text: 'Ежемесячная абонентская плата' },
+          { price: true, text: '<div class="price">От <strong>400</strong>грн</div>' }
+        ]
+      },
+      {
+        cols: [
+          { text: 'Установка сигнализации' },
+          { price: true, text: '<div class="price">От <strong>4000</strong>грн</div>' }
+        ]
+      },
+      {
+        cols: [
+          { text: 'Возможна установка сигнализации  с предоставлением 
+оборудования в бесплатное пользования, при этом
+абонентская плата вырастет до 500 гр.' },
+          { price: true, text: '<div class="price">От <strong>5000</strong>грн</div>' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Тревожная сигнализация (Тревожная кнопка)',
+    rows: [
+      {
+        cols: [
+          { text: 'Ежемесячная абонентская плата
+(если предоставляется как дополнительная 
+услуга к охранной, тогда плюс 100 грн)' },
+          { price: true, text: '<div class="price">От <strong>400</strong>грн</div>' }
+        ]
+      },
+      {
+        cols: [
+          { text: 'Установка сигнализации' },
+          { price: true, text: '<div class="price">От <strong>3000</strong>грн</div>' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Охрана кафе и ресторанов',
+    rows: [
+      {
+        cols: [
+          { text: 'Ежемесячная абонентская плата' },
+          { price: true, text: '<div class="price">От <strong>500</strong>грн</div>' }
+        ]
+      },
+      {
+        cols: [
+          { text: 'Установка сигнализации' },
+          { price: true, text: '<div class="price">От <strong>4000</strong>грн</div>' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Пожарная сигнализация',
+    rows: [
+      {
+        cols: [
+          { text: 'Ежемесячная абонентская плата' },
+          { price: true, text: '<div class="price">От <strong>360</strong>грн</div>' }
+        ]
+      },
+      {
+        cols: [
+          { text: 'Монтаж, установка, проект от категории и площади 
+объекта и рассчитывается отдельно для каждого объекта
+' },
+          { price: true, text: '<div class="price">От <strong>3000</strong>грн</div>' }
+        ]
+      }
+    ]
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section pt-md pb-md">
+  <div class="container">
+    <!-- begin prices-tables -->
+    <div class="prices-tables">
+      <div class="row">
+        {% for i in tables %}
+        <div class="col-md-6">
+          <!-- begin prices-table -->
+          <div class="prices-table">
+            <div class="prices-table__tr prices-table__tr-title">
+              <div class="title title--bold title--h3 title--white">{{ i.title | safe }}</div>
+            </div>
+
+            {% for j in i.rows %}
+            <div class="prices-table__tr{% if j.title %} prices-table__tr-title-content{% endif %}">
+              {% if j.title %}
+              <div class="title title--bold title--h4">{{ j.title | safe }}</div>
+
+              {% else %}
+
+              {% for k in j.cols %}
+              <div class="prices-table__td{% if k.price %} prices-table__td-price{% endif %}">{{ k.text | safe }}</div>
+              {% endfor %}
+
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+          <!-- end prices-table -->
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- end prices-tables -->
+  </div>
+</section>
+<!-- end section -->

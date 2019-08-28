@@ -1,0 +1,59 @@
+.prices-tables
+
+.prices-table
+  box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.12)
+  margin-bottom: 30px
+  &__tr    
+    border-bottom: 1px solid  $gray-lighten
+    +flex
+    +xss
+      display: block
+  &__tr-title
+    background-color: $accent
+    padding-left: 35px
+    padding-right: 35px
+    padding-top: 20px
+    padding-bottom: 20px
+    +lg
+      padding-left: 15px
+      padding-right: 15px
+      padding-top: 10px
+      padding-bottom: 10px
+  &__tr-title-content
+    padding-left: 35px
+    padding-right: 35px
+    background-color: $white-dark
+    padding-top: 20px
+    padding-bottom: 20px
+    +lg
+      padding-left: 15px
+      padding-right: 15px
+      padding-top: 10px
+      padding-bottom: 10px
+  &__td
+    width: 70%
+    padding-left: 35px
+    padding-right: 35px
+    padding-top: 20px
+    padding-bottom: 20px
+    +flex(flex-start, center)
+    +xl
+      width: 60%
+    +lg
+      padding-left: 15px
+      padding-right: 15px
+      padding-top: 10px
+      padding-bottom: 10px
+    +xss
+      width: 100%
+  &__td-price
+    width: 30%
+    padding-left: 10px
+    padding-right: 10px
+    text-align: center
+    background-color: $accent-lighten
+    +flex(center, center)
+    +xl
+      width: 40%
+    +xss
+      width: 100%

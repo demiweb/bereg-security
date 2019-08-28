@@ -3,3 +3,7 @@ ProjectTitle: bereg-security
 PageList:
 - file: home.html
 - file: flat.html
+- file: services.html
+- file: prices.html
+- file: contacts.html
+- file: blog.html

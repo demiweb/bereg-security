@@ -1,6 +1,189 @@
 .appartment
+  $this: &
   position: relative
   background-repeat: no-repeat
   background-size: 100%
   background-position: 50% 50%
-  padding-top: 70%
+  padding-top: 80%
+  margin-top: 85px
+  position: relative
+  z-index: 2
+  +sm
+    margin-top: 60px
+  +xs
+    margin-top: 40px
+  &__btn
+    position: absolute
+    z-index: 1
+    width: 55px
+    height: 55px
+    border-radius: 50%
+    border: 7px solid  $accent
+    background-color: $white
+    +sm
+      width: 30px
+      height: 30px
+      border-width: 2px
+      +before
+        width: 15px
+        height: 2px
+      +after
+        height: 15px
+        width: 2px
+    &:hover
+      #{$this}__hint
+        visibility: visible
+        opacity: 1
+    &::before, &::after
+      content: ''
+      background-color: $accent
+      display: block
+      +vcenter
+    &::before
+      width: 20px
+      height: 3px
+    &::after
+      height: 20px
+      width: 3px
+    &:nth-child(1)
+      z-index: 2
+      top: 27%
+      left: 12%
+      #{$this}__hint
+        bottom: 100%
+        left: calc(100% + 85px)
+        +before
+          right: calc(100% + 10px)
+        +after
+          right: calc(100% + 10px + 95px)
+        +sm
+          left: calc(100% + 10px)
+          +before
+            width: 22px
+            right: 100%
+          +after
+            right: calc(100% + 22px)
+        +xs
+          bottom: calc(100% + 10px)
+          left: -12vw
+          +before
+            display: none
+          +after
+            top: 100%
+            bottom: auto
+            left: calc(12vw + 13px)
+            right: auto
+            height: 10px
+    &:nth-child(2)
+      top: 20%
+      left: 60%
+      #{$this}__hint
+        bottom: 100%
+        right: calc(100% + 85px)
+        +before
+          left: calc(100% + 10px)
+        +after
+          left: calc(100% + 10px + 95px)
+        +md
+          right: 0
+          bottom: auto
+          top: calc(100% + 60px)
+          +before
+            display: none
+          +after
+            bottom: 100%
+            top: auto
+            left: auto
+            right: 20px
+            height: 25%
+        +sm
+          +after
+            right: 13px
+        +xs
+          top: calc(100% + 25px)
+          right: -28vw
+          +after
+            height: 20px
+            right: calc(28vw + 13px)
+    &:nth-child(3)
+      top: 22%
+      right: 12%
+      #{$this}__hint
+        top: 100%
+        right: calc(100% + 85px)
+        +before
+          left: calc(100% + 10px)
+          top: 70%
+        +after
+          top: auto
+          bottom: 30%
+          left: calc(100% + 10px + 95px)
+        +sm
+          right: 0
+          top: calc(100% + 50px)
+          +before
+            display: none
+          +after
+            top: auto
+            bottom: 100%
+            left: auto
+            right: 13px
+            height: 20%
+        +xs
+          right: -11vw
+          left: auto
+          +after
+            right: calc(11vw + 13px)
+  &__hint
+    position: absolute
+    z-index: 1
+    opacity: 0
+    visibility: hidden
+    +tr(opacity .3s, visibility .3s)
+    +before
+      border-top: 1px dashed $accent
+      // width: 95px
+      width: 20%
+      position: absolute
+      top: 30%
+    +after
+      // height: 180px
+      height: 65%
+      border-right: 1px dashed $accent
+      position: absolute
+      top: 30%
+    +xs
+      // display: none
+
+
+.appartment-hint
+  display: block
+  background-color: $accent-light
+  padding: 15px
+  min-height: 295px
+  width: 470px
+  color: $white
+  text-align: left
+  +md
+    min-height: 0
+    padding-bottom: 40px
+  +sm
+    width: 350px
+  +xs
+    width: 90vw
+  &__title-sm
+    display: block
+    font-size: $fz-xs
+    color: #aac5b7
+    margin-bottom: 30px
+    +lg
+      margin-bottom: 20px
+    +md
+      margin-bottom: 10px
+  &__title
+    margin-bottom: 20px
+    display: block
+    +md
+      margin-bottom: 10px
+  &__text
+    display: block

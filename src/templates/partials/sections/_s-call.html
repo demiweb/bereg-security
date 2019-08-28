@@ -1,5 +1,5 @@
 <!-- begin section -->
-<section class="section section--gray section--simple">
+<section class="section section--gray section--simple{% if sectionCall.mod %} {{ sectionCall.mod }}{% endif %}">
   <div class="section-img is-right-50 is-bottom">
     <img class="js-lazy" alt="" data-src="./img/dude.png"/>
   </div>
@@ -9,7 +9,7 @@
       <div class="row">
         <div class="col-xl-4 col-lg-4 col-md-6">
           <div class="call-form__title">
-            <div class="title title--h3 title--white">Желаете задать нам вопрос?</div>
+            <div class="title title--h3 title--white title--bold">Желаете задать нам вопрос?</div>
           </div>
 
           <div class="call-form__subttl">Наш контактный центр работает с 10:00 до 19:00 (Пн-Пт). 

@@ -4,7 +4,8 @@
     text-align: left
  
 .hero-inner
-  color: $white  
+  color: $white
+  position: relative
   +cover
   +lg
     +before
@@ -19,9 +20,22 @@
     position: relative
     z-index: 1
     padding-top: 25px
-    padding-bottom: 25px
-    min-height: calc(100vh - #{$header-height})
+    padding-bottom: 25px    
     +flex(center, normal, column)
+    min-height: calc(100vh - #{$header-height})
+    .is-ie &
+      min-height: 0
+      height: calc(100vh - #{$header-height})
+    +md
+      min-height: calc(100vh - #{$header-height-md})
+      .is-ie &
+        min-height: 0
+        height: calc(100vh - #{$header-height-md})
+    +xs
+      min-height: calc(100vh - #{$header-height-xs})
+      .is-ie &
+        min-height: 0
+        height: calc(100vh - #{$header-height-xs})
   &__uptitle
     margin-bottom: 10px
     font-size: 18px

@@ -46,6 +46,15 @@ features = {
 <!-- begin section -->
 <section class="section pt-sm pb-md">
   <div class="container">
+    {% if sectionFeatures.title %}
+    <div class="section__title">
+      <div class="title">{{ sectionFeatures.title | safe  }}</div>
+    </div>
+    {% endif %}
+
+    {% if sectionFeatures.subttl %}
+    <div class="section__subttl">{{ sectionFeatures.subttl | safe }}</div>
+    {% endif %}
     <!-- begin features -->
     <div class="features">
       {% for i in features.list %}

@@ -61,6 +61,8 @@ body
     font-size: 2.77em
     color: $accent
     line-height: 1
+    +sm
+      font-size: 2.3em
   &__title
     color: $c-text
     // font-weight: 700
@@ -150,3 +152,13 @@ body
         display: inline-block
         vertical-align: baseline
         margin-right: 5px
+
+.map
+  position: relative
+  padding-top: 40%
+  iframe
+    +coverdiv
+  +xs
+    padding-top: 70%
+  +sm
+    padding-top: 50%

@@ -1,0 +1,175 @@
+{%set
+contacts = [
+  {
+    icon: 'smartphone',
+    title: 'Контакты офиса:',
+    links: {
+      list: [
+        { link: '+38 (044) 559-86-80', href: 'tel:+380445598680' },
+        { link: '+38 (044) 200-23-03', href: 'tel:+380442002303' },
+        { link: '+38 (096) 007-04-97', href: 'tel:+380960070497' }
+      ]
+    }
+  },
+  {
+    icon: 'smartphone',
+    title: 'Сычевский Владимир Иосифович <small>(заместитель генерального директора)</small>',
+    links: {
+      list: [
+        { link: '+38 (067) 332-27-20', href: 'tel:+380673322720' }
+      ]
+    }
+  },
+  {
+    icon: 'placeholder',
+    title: 'Наш адрес:',
+    links: {
+      list: [
+        { item: 'ул. Краківська, 13а, Київ, 02000' }
+      ]
+    }
+  },
+  {
+    icon: 'email',
+    title: 'Наш e-mail:',
+    links: {
+      list: [
+        { link: '2002303bereg@ukr.net', href: 'mailto:2002303bereg@ukr.net' }
+      ]
+    }
+  }
+] 
+%}
+
+{%set
+form = [
+  {
+    mod: 'input--border',
+    name: 'input',
+    type: 'text',
+    placeholder: 'Введите ваше имя',
+    fieldClass: '',
+    fieldAttributes: {}
+  },
+  {
+    mod: 'input--border',
+    name: 'input',
+    type: 'tel',
+    placeholder: '+3 ( _ _ _ ) _ _ - _ _ - _ _',
+    fieldClass: 'js-mask',
+    fieldAttributes: { 'data-mask-type': 'phone', 'data-mask': '+{38}(000) 000-00-00' }
+  },
+  {
+    mod: 'textarea--border',
+    name: 'textarea',
+    type: '',
+    placeholder: 'Опишите кратко ваш вопрос',
+    fieldClass: 'js-textarea',
+    fieldAttributes: {}
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section pt-lg pb-lg">
+  <div class="container">
+    <div class="section__title">
+      <div class="title">Мы ждем <strong>вас!</strong></div>
+    </div>
+
+    <div class="section__subttl">Звоните по телефонам ниже, напишите нам письмо <br>
+или заезжайте в гости!</div>
+
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="contacts__wrap">
+          <!-- begin contacts -->
+          <div class="contacts__contacts contacts">
+            {% for i in contacts %}
+            <!-- begin contact -->
+            <div class="contact">
+              <div class="contact__icon">{{ mixins.icon(i.icon) }}</div>
+
+              <div class="contact__content">
+                <div class="contact__title">
+                  <div class="title title--h5 title--bold">{{ i.title | safe }}</div>
+                </div>
+
+                <div class="contact__list">
+                  {{ mixins.list(
+                    name = '',
+                    modifications = { wrap: 'nav nav--footer', item: '', link: '' },
+                    list = i.links.list
+                  ) }}
+                </div>
+              </div>
+            </div>
+            <!-- end contact -->          
+            {% endfor %}
+          </div>
+          <!-- end contacts -->
+
+          <!-- begin map -->
+          <div class="contacts__map map">
+            <iframe class="js-lazy" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d755.2274261903665!2d30.620431056627357!3d50.4546568110015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cfff413fb553%3A0x7bfe22077a9fd09c!2z0YPQuy4g0JrRgNCw0LrQvtCy0YHQutCw0Y8sIDEzLCDQmtC40LXQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1566997982439!5m2!1sru!2sua" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </div>
+          <!-- end map -->
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <!-- begin form -->
+        <div class="form form--shadow form--center">
+          <form>
+            <div class="form__inner">
+              <div class="form__title">
+                <div class="title title--bold title--h3">Заполните контактную форму</div>
+              </div>
+
+              <div class="form__subttl">И мы перезвоним вам в ближайшее время</div>
+
+              {% for i in form %}
+              <div class="form__field">
+                {{ mixins.input(
+                  name = i.name,
+                  mod = i.mod,
+                  type = i.type,
+                  placeholder = i.placeholder,
+                  value = '',
+                  fieldClass = i.fieldClass,
+                  fieldAttributes = i.fieldAttributes
+                ) }}
+              </div>
+              {% endfor %}
+
+              <div class="form__btn">
+                {{ mixins.btn(
+                  title = 'Заказать звонок',
+                  mod = 'btn--full',
+                  href = false,
+                  combine = true,
+                  icon = mixins.icon('support')
+                ) }}
+              </div>
+
+              <div class="form__checkbox">
+                {{ mixins.input(
+                  name = 'checkbox',
+                  mod = '',
+                  type = 'checkbox',
+                  placeholder = '',
+                  value = '',
+                  fieldClass = '',
+                  label = { span: true, last: 'Я согласен на обработку моих персональных данных' },
+                  fieldAttributes = { checked: '' }
+                ) }}
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- end form -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end section -->

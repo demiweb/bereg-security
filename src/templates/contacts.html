@@ -1,0 +1,28 @@
+---
+title: contacts
+page: contacts
+hero: {
+  title: {
+    title: 'Наши <strong>контакты</strong>',
+    mod: 'title--lg'
+  },
+  colClass: 'col-12',
+  breadcrumbs: {
+    list: [
+      { link: 'Главная' },
+      { item: '-' },
+      { link: 'Контакты', modLink: 'is-active' }
+    ]
+  },
+  bgImage: 'bg-hero-prices.jpg'
+}
+sectionCall: {
+  mod: 's-call s-call--mt'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-contacts.html" %}
+{% endblock %}

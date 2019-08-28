@@ -1,0 +1,50 @@
+---
+title: blog
+page: blog
+hero: {
+  title: {
+    title: 'Наши <strong>статьи</strong>',
+    mod: 'title--lg'
+  },
+  colClass: 'col-12',
+  breadcrumbs: {
+    list: [
+      { link: 'Главная' },
+      { item: '-' },
+      { link: 'Статьи', modLink: 'is-active' }
+    ]
+  },
+  bgImage: 'bg-hero-blog.jpg'
+}
+news: [
+  {
+    meta: { title: 'акции' },
+    title: 'Акция 2+1',
+    text: ''
+  },
+  {
+    meta: { title: 'новости' },
+    title: '9 сентября пройдет международный мастер-класс
+по самообороне для сотрудников охранных фирм',
+    text: ''
+  },
+  {
+    meta: { title: 'акции' },
+    title: 'Акция 2+1',
+    text: ''
+  },
+  {
+    meta: { title: 'новости' },
+    title: '9 сентября пройдет международный мастер-класс
+по самообороне для сотрудников охранных фирм',
+    text: ''
+  }
+]
+newsPagination: true
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-blog.html" %}
+{% endblock %}

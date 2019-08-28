@@ -11,6 +11,9 @@
   &__subttl
     margin-bottom: 50px
     text-align: center
+    max-width: 600px
+    margin-left: auto
+    margin-right: auto
     +lg
       margin-bottom: 40px
     +md
@@ -56,3 +59,19 @@
     right: 10%
   &.is-right-50
     right: 5%
+
+.s-call
+  +sm
+    .section-img
+      display: none
+  &--mt
+    margin-top: 125px
+    +md
+      margin-top: 100px
+    +sm
+      // margin-top: 100px
+      margin-top: 0
+    // +xs
+    //   margin-top: 50px
+    // +r(374)
+    //   margin-top: 0

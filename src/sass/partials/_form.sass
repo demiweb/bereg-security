@@ -1,4 +1,20 @@
 .form
+  $this: &
+  &__title
+    margin-bottom: 8px
+  &__subttl
+    margin-bottom: 50px
+    +xl
+      margin-bottom: 40px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  &__btn
+    +notlast
+      margin-bottom: 25px
+      +md
+        margin-bottom: 15px
   &__row
     margin-left: -2px
     margin-right: -2px
@@ -17,6 +33,27 @@
     +sm
       width: 100%
 
+  &--shadow
+    box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.1)
+    
+  &--center
+    text-align: center
+    padding: 75px 25px 60px
+    background-color: $white
+    +xl
+      padding: 55px 20px 50px
+    +lg
+      padding: 40px 20px
+    +md
+      padding: 30px 20px
+    +sm
+      padding: 20px 15px
+    #{$this}__field
+      +notlast
+        margin-bottom: 25px
+        +md
+          margin-bottom: 15px
+
 .input
   input
     background-color: $white
@@ -34,3 +71,24 @@
       padding: 5px
     &:focus
       border-color: $accent
+  &--border
+    input
+      padding: 5px 0
+      border: 0
+      border-bottom: 1px solid  $gray-light
+
+.textarea
+  textarea
+    resize: none
+    border: 0
+    width: 100%
+    min-height: 90px
+    overflow: hidden
+    &:focus
+      border-color: $accent
+    +placeholder
+      color: $gray-light
+  &--border
+    textarea
+      border: 0
+      border-bottom: 1px solid  $gray-light

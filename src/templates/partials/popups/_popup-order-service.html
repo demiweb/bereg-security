@@ -1,0 +1,93 @@
+{%set
+form = [
+  {
+    mod: 'input--border',
+    name: 'input',
+    type: 'text',
+    placeholder: 'Введите ваше имя',
+    fieldClass: '',
+    fieldAttributes: {}
+  },
+  {
+    mod: 'input--border',
+    name: 'input',
+    type: 'tel',
+    placeholder: '+3 ( _ _ _ ) _ _ - _ _ - _ _',
+    fieldClass: 'js-mask',
+    fieldAttributes: { 'data-mask-type': 'phone', 'data-mask': '+{38}(000) 000-00-00' }
+  },
+  {
+    mod: 'select--border',
+    name: 'select',
+    type: 'default',
+    placeholder: 'Опишите кратко ваш вопрос',
+    fieldClass: 'js-select',
+    fieldAttributes: {},
+    options: [
+      { value: '1', option: 'Охрана квартиры' },
+      { value: '2', option: 'Охрана квартиры' },
+      { value: '3', option: 'Охрана квартиры' }
+    ]
+  }
+]
+%}
+
+<!-- begin popup -->
+<div class="popup popup--form js-popup" data-popup="order_service">
+  <div class="popup__inner">
+    <button class="popup__close js-popup-close"></button>
+
+    <div class="popup__form">
+      <div class="form form--center">
+        <form>
+            <div class="form__inner">
+              <div class="form__title">
+                <div class="title title--bold title--h3">Оставьте ваши данные</div>
+              </div>
+
+              <div class="form__subttl">Наш менеджер свяжется с вами для обсуждения деталей</div>
+
+              {% for i in form %}
+              <div class="form__field">
+                {{ mixins.input(
+                  name = i.name,
+                  mod = i.mod,
+                  type = i.type,
+                  placeholder = i.placeholder,
+                  value = '',
+                  fieldClass = i.fieldClass,
+                  fieldAttributes = i.fieldAttributes,
+                  options = i.options
+                ) }}
+              </div>
+              {% endfor %}
+
+              <div class="form__btn">
+                {{ mixins.btn(
+                  title = 'Заказать звонок',
+                  mod = 'btn--full',
+                  href = false,
+                  combine = true,
+                  icon = mixins.icon('support')
+                ) }}
+              </div>
+
+              <div class="form__checkbox">
+                {{ mixins.input(
+                  name = 'checkbox',
+                  mod = '',
+                  type = 'checkbox',
+                  placeholder = '',
+                  value = '',
+                  fieldClass = '',
+                  label = { span: true, last: 'Я согласен на обработку моих персональных данных' },
+                  fieldAttributes = { checked: '' }
+                ) }}
+              </div>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end popup -->
