@@ -1,0 +1,35 @@
+---
+title: blog-page
+page: blog-page
+hero: {
+  upttl: {
+    title: 'акции',
+    mod: 'hero-inner__uptitle-sm'
+  },
+  title: {    
+    title: 'Акция 2+1',    
+    mod: 'title--lg title--bold title-under'
+  },
+  subttl: {
+    title: '28.08.2019',
+    mod: 'hero-inner__subttl-sm'
+  },
+  colClass: 'col-12',
+  breadcrumbs: {
+    list: [
+      { link: 'Главная' },
+      { item: '-' },
+      { link: 'Наши статьи' },
+      { item: '-' },
+      { link: 'Акция 2+1', modLink: 'is-active' }
+    ]
+  },
+  bgImage: 'bg-hero-blog-item.jpg'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-blog-page.html" %}
+{% endblock %}

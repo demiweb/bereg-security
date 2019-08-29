@@ -8,7 +8,7 @@ export default function setInputMask() {
 
   maskedInputs.forEach((input) => {
     const type = input.dataset.maskType;
-    const { mask } = input.dataset;
+    const mask = input.dataset.mask || '+{38}(000) 000-00-00';
     // const mask = '{38}000 000-00-00';
 
     const options = {

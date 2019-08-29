@@ -6,7 +6,8 @@
 .hero-inner
   color: $white
   position: relative
-  +cover
+  overflow: hidden
+  // +cover
   +lg
     +before
       +coverdiv
@@ -16,6 +17,11 @@
     width: 100%
     flex-grow: 1
     +flex(center, normal, column)
+  &__bg
+    z-index: 0
+    +coverdiv
+    +cover
+    +tr(transform .3s)
   &__content
     position: relative
     z-index: 1
@@ -41,6 +47,10 @@
     font-size: 18px
     text-transform: uppercase
     font-weight: 400
+  &__uptitle-sm
+    font-size: $fz-xs
+    color: $c-text
+    font-weight: 700
   &__title
     margin-bottom: 15px
     +md
@@ -51,6 +61,9 @@
       margin-bottom: 25px
     +md
       margin-bottom: 15px
+  &__subttl-sm
+    font-size: $fz-xs
+    color: $c-text
   &__btns
     margin-bottom: 40px
     +flex(flex-start, center)

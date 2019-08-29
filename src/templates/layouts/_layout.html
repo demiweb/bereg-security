@@ -17,6 +17,17 @@
       {% include "partials/_header.html" %}
       <!-- begin main -->
       <main class="main{% if mainClass %} {{ mainClass }}{% endif %}">
+        {% if main.breadcrumbs %}
+        <div class="main__breadcrumbs">
+          <div class="container">
+            {{ mixins.list(
+              name = 'breadcrumbs',
+              modifications = { wrap: main.breadcrumbs.mod, item: '', link: '' },
+              list = main.breadcrumbs.list
+            ) }}
+          </div>
+        </div>
+        {% endif %}
         {% block content %}{% endblock %}
       </main>
       <!-- end main -->

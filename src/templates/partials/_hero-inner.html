@@ -1,6 +1,8 @@
 <!-- begin hero-inner -->
-<div class="hero-inner{% if hero.bgImage %} js-lazy{% endif %}" {% if hero.bgImage %}data-background-image="./img/hero/{{ hero.bgImage }}"{% endif %}>
-  
+<div class="hero-inner">
+  {% if hero.bgImage %} 
+  <div class="hero-inner__bg js-hero-bg js-lazy" data-background-image="./img/hero/{{ hero.bgImage }}"></div>
+  {% endif %}
 
   <div class="hero-inner__content">
     {% if hero.breadcrumbs %}
@@ -20,7 +22,7 @@
         <div class="{% if hero.colClass %}{{hero.colClass}}{% else %}col-xl-5 col-lg-6 col-md-8 col-sm-8{% endif %}">
           {# <div class="hero-inner__content"> #}
             {% if hero.upttl %}
-            <div class="hero-inner__uptitle">{{ hero.upttl | safe }}</div>
+            <div class="hero-inner__uptitle{% if hero.upttl.mod %} {{ hero.upttl.mod }}{% endif %}">{{ hero.upttl.title | safe }}</div>
             {% endif %}
 
             {% if hero.title %}      
@@ -30,7 +32,7 @@
             {% endif %}
 
             {% if hero.subttl %}
-            <div class="hero-inner__subttl">{{ hero.subttl | safe }}</div>
+            <div class="hero-inner__subttl{% if hero.subttl.mod %} {{ hero.subttl.mod }}{% endif %}">{{ hero.subttl.title | safe }}</div>
             {% endif %}
             
             {% if hero.btns %}

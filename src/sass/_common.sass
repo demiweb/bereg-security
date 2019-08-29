@@ -39,6 +39,15 @@ body
   margin-left: auto
   margin-right: auto
 
+.main
+  &__breadcrumbs
+    padding-top: 20px
+    padding-bottom: 20px
+    +md
+      padding-bottom: 10px
+    +sm
+      padding-bottom: 0
+
 .logo
   display: inline-block
   font-size: 0
@@ -162,3 +171,54 @@ body
     padding-top: 70%
   +sm
     padding-top: 50%
+
+blockquote
+  background-color: $white-dark
+  border-left: 3px solid  $accent
+  padding: 30px 20px
+  +md
+    padding: 20px
+  +sm
+    padding: 15px
+
+.aside
+  &__title
+    margin-bottom: 20px
+    text-align: center
+    +md
+      margin-bottom: 10px
+
+.section-text
+  h1
+    @extend .title
+    @extend .title--h3
+    @extend .title--bold
+  h2
+    @extend .title
+    @extend .title--h4
+    @extend .title--bold
+  h3
+    @extend .title
+    @extend .title--h5
+    @extend .title--bold
+  h1, h2, h3, p, ul, ol
+    margin-bottom: 35px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 20px
+    +sm
+      margin-bottom: 10px
+  a
+    text-decoration: underline
+    color: $blue
+  ul
+    li
+      &::before
+        content: '-'
+        display: inline-block
+        vertical-align: baseline
+        margin-right: 5px
+  ol
+    list-style-type: decimal
+    margin-left: 1.1em

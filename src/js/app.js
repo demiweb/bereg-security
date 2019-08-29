@@ -1,3 +1,4 @@
+import 'intersection-observer';
 import $ from 'jquery';
 // import '@babel/polyfill';
 import './lib/polyfill';
@@ -11,6 +12,8 @@ import toggleMenu from './components/toggleMenu';
 import setTextareaHeight from './components/setTextareaHeight';
 import setInputMask from './components/setInputMask';
 import setPopups from './components/setPopups';
+import setSelects from './components/setSelects';
+import scaleHeroBg from './components/scaleHeroBg';
 
 $(() => {
   sayHello();
@@ -23,4 +26,6 @@ $(() => {
   setTextareaHeight();
   setInputMask();
   setPopups();
+  setSelects();
+  scaleHeroBg();
 });

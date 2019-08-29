@@ -1,0 +1,30 @@
+.blog-article
+  +sm
+    margin-bottom: 25px
+  h2
+    @extend .title
+    @extend .title--bold
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  p, figure, blockquote, ul, ol
+    margin-bottom: 35px
+    +lg
+      margin-bottom: 25px
+    +md
+      margin-bottom: 15px
+    +sm
+      margin-bottom: 10px
+  img
+    width: 100%
+  figcaption
+    font-style: italic
+    font-size: $fz-xs
+    color: $gray-light
+  ul
+    list-style-type: disc
+    margin-left: 1.1em
+  ol
+    list-style-type: decimal
+    margin-left: 1.1em
+    
