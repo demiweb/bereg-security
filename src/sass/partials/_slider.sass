@@ -75,6 +75,23 @@
           img
             filter: grayscale(0)
             opacity: 1
+  &--sertificats
+    &__wrap
+      padding-left: 90px
+      padding-right: 90px      
+      .tns-nav
+        position: absolute
+        z-index: 1
+        bottom: 10px
+        width: 100%
+        left: 0
+      +sm
+        padding-left: 55px
+        padding-right: 55px
+      +xs
+        padding-left: 0
+        padding-right: 0
+        padding-bottom: 40px
 
 .prev, .next
   position: absolute
@@ -109,3 +126,12 @@
     transform: translate(0, -50%) rotate(-135deg)
     left: auto
     right: .7em
+
+.slider-sertificat
+  background-repeat: no-repeat
+  background-size: 90%
+  background-position: 50% 50%
+  padding-top: 120%
+  +xs
+    padding-top: 80%
+    background-size: 60%

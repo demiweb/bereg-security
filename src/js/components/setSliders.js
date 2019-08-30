@@ -71,6 +71,28 @@ export default function setSliders() {
           },
         },
       },
+      sertificats: {
+        container,
+        items: 1,
+        prevButton: prev,
+        nextButton: next,
+        onInit: setLazy,
+        mouseDrag: true,
+        nav: true,
+        responsive: {
+          320: {
+            items: 1,
+            nav: true,
+          },
+          576: {
+            items: 2,
+            nav: false,
+          },
+          768: {
+            items: 3,
+          },
+        },
+      },
     };
   }
 

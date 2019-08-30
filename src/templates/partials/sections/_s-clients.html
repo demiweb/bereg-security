@@ -16,6 +16,15 @@ slider = [
 <!-- begin section -->
 <section class="section">
   <div class="container">
+    {% if sectionClients.title %}
+      <div class="section__title">
+        <div class="title">{{ sectionClients.title | safe }}</div>
+      </div>
+    {% endif %}
+    {% if sectionClients.subttl %}
+      <div class="section__subttl">{{ sectionClients.subttl | safe }}</div>
+    {% endif %}
+
     <!-- begin slider -->
     <div class="slider__wrap slider--clients__wrap">
       <div class="slider slider--clients js-slider" data-slider="clients">

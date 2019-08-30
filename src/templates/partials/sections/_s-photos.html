@@ -1,0 +1,44 @@
+{%set
+photos = [
+  {},
+  {},
+  {},
+  { link: true }
+]
+%}
+
+<!-- begin section -->
+<section class="section pt-md pb-sml">
+  <div class="container">
+    <div class="section__title">
+      <div class="title">С гордостью <strong>делимся нашими фото</strong></div>
+    </div>
+
+    <div class="section__subttl">Лучше цифр о нас могут рассказать только фото. <br>
+    Мы делимся моментами из наших будней в нашей фотогалерее</div>
+
+    <!-- begin photos -->
+    <div class="photos js-lightgallery">
+      {% for i in photos %}
+        {% if i.link %}
+        <a href="#" class="photo photo--link">
+          <span class="service-link__title link-arrow">
+            <span class="link-arrow__title">Листать дальше</span>
+            <span class="link-arrow__arr"></span>
+          </span>
+        </a>
+        {% else %}
+        <!-- begin photo -->
+        <a
+          href="./img/photos/01.jpg"
+          class="photo js-lazy"
+          data-exthumbimage="./img/photos/01.jpg"
+          data-background-image="./img/photos/01.jpg"></a>
+        <!-- end photo -->
+        {% endif %}
+      {% endfor %}
+    </div>
+    <!-- end photos -->
+  </div>
+</section>
+<!-- end section -->

@@ -14,6 +14,7 @@ import setInputMask from './components/setInputMask';
 import setPopups from './components/setPopups';
 import setSelects from './components/setSelects';
 import scaleHeroBg from './components/scaleHeroBg';
+import setGallery from './components/setGallery';
 
 $(() => {
   sayHello();
@@ -28,4 +29,5 @@ $(() => {
   setPopups();
   setSelects();
   scaleHeroBg();
+  setGallery();
 });

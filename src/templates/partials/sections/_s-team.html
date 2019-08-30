@@ -1,0 +1,54 @@
+{%set
+team = [
+  { img: '01.jpg', title: 'Сычевский Владимир Иосифович', subttl: '(Заместитель генерального директора)' },
+  { img: '02.jpg', title: 'Алексеева Валентина
+Владимировна
+', subttl: '(Заведующий бухгалтерским учетом)' },
+  { img: '03.jpg', title: 'Воронецкий Андрей
+Константинович
+', subttl: '(Начальник безопасности)' },
+  { img: '04.jpg', title: 'Кокляева Анна Игоревна
+', subttl: '(Менеджер по приему звонков)' },
+  { img: '05.jpg', title: 'Шевченко Михаил
+Олексеевич
+', subttl: '(Заведующий бухгалтерским учетом)' },
+  { img: '06.jpg', title: 'Иванченко Андрей
+Петрович
+', subttl: '(Начальник видеонаблюдения)' }
+]
+%}
+
+<!-- begin section -->
+<section class="section pt-md pb-sml">
+  <div class="container">
+    <div class="section__title">
+      <div class="title">Гордимся <strong>своими сотрудниками</strong></div>
+    </div>
+
+    <div class="section__subttl">За 22 года работы мы преобрели достаточно опыта, чтобы <br>
+    с гордостью заявить о себе всей Украине</div>
+
+    <!-- begin team -->
+    <div class="team">
+      {% for i in team %}
+      <div class="team__item">
+        <!-- begin member -->
+        <div class="member">
+          <div class="member__img js-lazy" data-background-image="./img/team/{{ i.img }}"></div>
+
+          <div class="member__content">
+            <div class="member__title">
+              <div class="title title--bold title--h4">{{ i.title | safe }}</div>
+            </div>
+
+            <div class="member__subttl">{{ i.subttl | safe }}</div>
+          </div>
+        </div>
+        <!-- end member -->
+      </div>
+      {% endfor %}
+    </div>
+    <!-- end team -->
+  </div>
+</section>
+<!-- end section -->

@@ -1,0 +1,44 @@
+---
+title: about
+page: about
+hero: {
+  title: {
+    title: 'О <strong>нас</strong>',
+    mod: 'title--lg'
+  },
+  colClass: 'col-12',
+  breadcrumbs: {
+    list: [
+      { link: 'Главная' },
+      { item: '-' },
+      { link: 'Услуги', modLink: 'is-active' }
+    ]
+  },
+  bgImage: 'bg-hero-about.jpg'
+}
+sectionFeatures: {
+  title: 'Гордимся <strong>своими преимуществами</strong>',
+  subttl: 'За 22 года работы мы преобрели достаточно опыта, чтобы <br>
+с гордостью заявить о себе всей Украине'
+}
+sectionClients: {
+  title: 'Любим наших <strong>клиентов</strong>',
+  subttl: 'Любим и защищаем. Все, кто заказывает у нас охранные <br>
+услуги, спят спокойно.'
+}
+sectionCall: {
+  mod: 's-call s-call--mt'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/sections/_s-numbers.html" %}
+  {% include "partials/sections/_s-photos.html" %}
+  {% include "partials/sections/_s-features.html" %}
+  {% include "partials/sections/_s-sertificats.html" %}
+  {% include "partials/sections/_s-team.html" %}
+  {% include "partials/sections/_s-clients.html" %}
+  {% include "partials/sections/_s-thanks.html" %}
+  {% include "partials/sections/_s-call.html" %}
+{% endblock %}

@@ -1,0 +1,27 @@
+.numbers
+  overflow: hidden
+
+.number-item
+  text-align: center
+.number
+  +flex(center ,center)
+  &__icon
+    font-size: 0
+    .icon
+      position: relative
+      font-size: 75px
+      right: -.6em
+      top: .1em
+      pointer-events: none
+      fill: $gray-light
+      +sm
+        right: -.7em
+  &__icon-first
+  &__icon-last
+    transform: scaleX(-1)
+  &__title
+    font-weight: 700
+    font-style: italic
+    +css-lock(36, 70, 320, 1399, font-size)
+    color: $accent
+    line-height: 1

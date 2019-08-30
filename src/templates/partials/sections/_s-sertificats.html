@@ -1,0 +1,29 @@
+<!-- begin section -->
+<section class="section pt-md pb-sml">
+  <div class="container">
+    <div class="section__title">
+      <div class="title">Работаем <strong>официально и по закону</strong></div>
+    </div>
+
+    <div class="section__subttl">Качество и надежность нашей работы подтверждают лицензии <br>
+и сертификаты, выданные государством</div>
+
+    <!-- begin slider -->
+    <div class="slider__wrap slider--sertificats__wrap">
+      <div class="slider js-slider" data-slider="sertificats">
+        {% for i in range(0, 5) %}
+        <!-- begin slide -->
+        <div class="slide">
+          <div class="slider-sertificat js-lazy" data-background-image="./img/sertificat.png"></div>
+        </div>
+        <!-- end slide -->
+        {% endfor %}
+      </div>
+
+      <button class="slider__prev prev js-prev"></button>
+      <button class="slider__next next js-next"></button>
+    </div>
+    <!-- end slider -->
+  </div>
+</section>
+<!-- end section -->

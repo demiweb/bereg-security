@@ -1,0 +1,49 @@
+{%set
+numbers = [
+  { nmb: '22', title: 'Года в охранной <br>
+сфере' },
+  { nmb: '4000+', title: 'Счастливых клиентов, которые уверены <br>
+в своей безопасности' },
+  { nmb: '27', title: 'Мобильных <br> 
+групп реагирования' },
+  { nmb: '100%', title: 'Гарантия прибытия вовремя <br>
+и во всеоружии' }
+]
+%}
+
+<!-- begin section -->
+<section class="section pt-mdl pb-sml">
+  <div class="container">
+    <div class="section__title">
+      <div class="title">Подтверждаем <strong>репутацию цифрами</strong></div>
+    </div>
+
+    <div class="section__subttl">Мы можем много рассказать о себе, но лучше за нас <br>
+    могут сделать это только результаты в цифрах</div>
+
+   <!-- begin numbers -->
+   <div class="numbers">
+     <div class="row">
+       {% for i in numbers %}
+       <div class="col-md-3 col-sm-6 col-6">
+         <!-- begin number-item -->
+         <div class="number-item">
+           <div class="number-item__nmb">
+             <div class="number">            
+              <div class="number__icon number__icon-first">{{ mixins.icon('laurel') }}</div>
+              <div class="number__title">{{ i.nmb | safe }}</div>
+              <div class="number__icon number__icon-last">{{ mixins.icon('laurel') }}</div>
+              </div>
+           </div>
+
+           <div class="number-item__title">{{ i.title | safe }}</div>
+         </div>
+         <!-- end number-item -->
+       </div>
+       {% endfor %}
+     </div>
+   </div>
+   <!-- end numbers -->
+  </div>
+</section>
+<!-- end section -->

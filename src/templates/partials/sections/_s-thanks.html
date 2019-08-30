@@ -1,0 +1,24 @@
+<!-- begin section -->
+<section class="section pt-md pb-sml">
+  <div class="container">
+    <div class="section__title">
+      <div class="title">Нам <strong>благодарны</strong></div>
+    </div>
+
+    <div class="section__subttl">Нас благодарят положительными отзывами и мы хотим,<br>
+чтобы количество наших довольных клиентов только росло</div>
+
+    <!-- begin thanks -->
+    <div class="thanks">
+      {% for i in range(0, 5) %}
+      <div class="thanks__item">
+        <!-- begin thanks-item -->
+        <div class="thanks-item js-lazy" data-background-image="./img/thanks.png"></div>
+        <!-- end thanks-item -->
+      </div>
+      {% endfor %}
+    </div>
+    <!-- end thanks -->
+  </div>
+</section>
+<!-- end section -->
