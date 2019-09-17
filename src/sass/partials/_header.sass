@@ -49,11 +49,12 @@
       justify-content: space-between
   &__contacts
     flex-grow: 1
-    +sm
-      display: none
+    +md
+      .header-contact:not(.header-contact--mob-visible)
+        display: none
   &__contacts-mob
     display: none
-    +sm
+    +md
       display: block
   &__lang
     text-align: center
@@ -107,11 +108,12 @@
 
 .header-contacts
   +flex(flex-start, center)
-  +xss
+  +md
     display: block
 
 .header-contact
-  width: 33.33333%
+  // width: 33.33333%
+  width: 25%
   padding-top: 10px
   padding-bottom: 10px
   font-size: 21px
@@ -119,16 +121,26 @@
   text-align: center
   +notlast
     border-right: 1px solid  $white-dark
-  +md
-    font-size: 18px
-  +sm
+  +lg
     font-size: $fz
+  +md
+    width: auto
+    font-size: $fz-sm
     margin-right: 10px
     margin-right: 10px
     +notlast
       border-right: 0
+    &.header-contact--mob-visible
+      padding-top: 0
+      padding-bottom: 0
   +xss
     width: auto
+  small
+    font-size: $fz-xs
+    color: red
+    display: block
+    +xss
+      font-size: 11px
 
 .lang
   $this: &
