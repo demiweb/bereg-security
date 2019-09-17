@@ -1,4 +1,4 @@
-import Select from 'select-custom/src/main';
+import Select from 'select-custom';
 
 class CustomSelect {
   constructor(select, params) {

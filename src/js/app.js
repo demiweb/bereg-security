@@ -1,6 +1,7 @@
 import 'intersection-observer';
 import $ from 'jquery';
 // import '@babel/polyfill';
+import 'core-js/features/object/assign';
 import './lib/polyfill';
 import sayHello from './lib/sayHello';
 import setHTMLClassNames from './components/setHTMLClassNames';
